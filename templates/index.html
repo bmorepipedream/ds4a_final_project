@@ -1,0 +1,182 @@
+<html>
+<head>
+<style>
+
+  body {
+      background-color: #d5e1df;
+    }
+
+  h3{
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 35px;
+  }
+
+  h2{
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+  }
+
+  p{
+    color: red;
+  }
+
+  .select{
+    width: 150px;
+    min-height: 30px;
+
+  }
+
+  .container{
+    width: 100%;
+    text-align: center;
+  }
+
+  .prediction-form{
+    display: inline-block;
+  }
+
+</style>
+</head>
+<body>
+    <h3>Income Prediction</h3>
+<div class='container'>
+<div class='prediction-form'>
+  <form action="/result" method="POST">
+    <label for="race"></label>
+    <select class="select" id="race" name="race">
+      <option value="" disabled selected>Race</option>
+      <option value="Black">Black</option>
+      <option value="Asian">Asian</option>
+      <option value="White">White</option>
+      <option value="Two or more">Two or more</option>      
+    </select>
+    <br>
+    <label for="hispanic"></label>
+    <select class="select" id="hispanic" name="hispanic">
+      <option value="" disabled selected>Hispanic</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+    <br>
+    <label for="gender"></label>
+    <select class="select" id="gender" name="gender">
+      <option value="" disabled selected>Gender</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+      <option value="Other">Other</option>
+    </select>
+    <br>
+    <label for="education"></label>
+    <select class="select" id="education" name="education">
+      <option value="" disabled selected>Education</option>
+      <option value="No Diploma">Some High School</option>
+      <option value="High School Diploma">High School Diploma</option>
+      <option value="Some College">Some College</option>
+      <option value="Bachelors">Bachelors</option>
+      <option value="Graduate">Graduate</option>
+    </select>
+    <br>
+    <label for="state"></label>
+    <select class="select" id="state" name="state">
+      <option value="" disabled selected>State</option>
+      <option value="AK">AK</option>
+      <option value="AL">AL</option>
+      <option value="AR">AR</option>
+      <option value="AZ">AZ</option>
+      <option value="CA">CA</option>
+      <option value="CO">CO</option>
+      <option value="CT">CT</option>
+      <option value="DC">DC</option>
+      <option value="DE">DE</option>
+      <option value="FL">FL</option>
+      <option value="GA">GA</option>
+      <option value="HI">HI</option>
+      <option value="IA">IA</option>
+      <option value="ID">ID</option>
+      <option value="IL">IL</option>
+      <option value="IN">IN</option>
+      <option value="KS">KS</option>
+      <option value="KY">KY</option>
+      <option value="LA">LA</option>
+      <option value="MA">MA</option>
+      <option value="MD">MD</option>
+      <option value="ME">ME</option>
+      <option value="MI">MI</option>
+      <option value="MN">MN</option>
+      <option value="MO">MO</option>
+      <option value="MS">MS</option>
+      <option value="MT">MT</option>
+      <option value="NC">NC</option>
+      <option value="ND">ND</option>
+      <option value="NE">NE</option>
+      <option value="NH">NH</option>
+      <option value="NJ">NJ</option>
+      <option value="NM">NM</option>
+      <option value="NV">NV</option>
+      <option value="NY">NY</option>
+      <option value="OH">OH</option>
+      <option value="OK">OK</option>
+      <option value="OR">OR</option>
+      <option value="PA">PA</option>
+      <option value="RI">RI</option>
+      <option value="SC">SC</option>
+      <option value="SD">SD</option>
+      <option value="TN">TN</option>
+      <option value="TX">TX</option>
+      <option value="UT">UT</option>
+      <option value="VA">VA</option>
+      <option value="VT">VT</option>
+      <option value="WA">WA</option>
+      <option value="WI">WI</option>
+      <option value="WV">WV</option>
+      <option value="WY">WY</option>
+      <option value="DL">DL</option>
+    </select>
+    <br>
+    <label for="age"></label>
+    <input class="select" type="number" id="age" name="age" min="18" max="75" placeholder="Age">
+    <br>
+    <label for="yearsofexperience"></label>
+    <input class="select" type="number" id="yearsofexperience" name="yearsofexperience" min="0" max="40" placeholder="Years of Experience">
+    <br>
+    <label for="yearsatcompany"></label>
+    <input class="select" type="number" id="yearsatcompany" name="yearsatcompany" min="0" max="40" placeholder="Years at Company">
+    <br>
+    <label for="title"></label>
+    <select class="select" id="title" name="title">
+      <option value="" disabled selected>Job Title</option>
+      <option value="Software Engineer">Software Engineer</option>
+      <option value="Product Manager">Product Manager</option>
+      <option value="Data Scientist">Data Scientist</option>
+      <option value="Hardware Engineer">Hardware Engineer</option>
+      <option value="Product Designer">Product Designer</option>
+    </select>
+    <br>
+    <label for="level"></label>
+    <select class="select" id="level" name="level">
+      <option value="" disabled selected>Level</option>
+      <option value="intern">Intern</option>
+      <option value="entry">Entry level</option>
+      <option value="intermediate">Intermediate level</option>
+      <option value="senior">Senior level</option>
+      <option value="manager">Manager</option>
+      <option value="senior manager">Senior mMnager</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+<div>
+  <h3>Dashboard</h3>
+  <h2><a href="https://public.tableau.com/app/profile/janet.fields/viz/AnExaminationofFactorsRelatedtoWorkingfromHomefrom2019-2021/Dashboard2?publish=yes">Click here for mobile friendly dashboard</a></h2>
+</div>
+<div>
+  <p align="center"><iframe height="100%" width="100%" src="https://public.tableau.com/views/AnExaminationofFactorsRelatedtoWorkingfromHomefrom2019-2021/Dashboard2?::showVizHome=no&:embed=true"></iframe></p>
+</div>
+</body>
+</html>
